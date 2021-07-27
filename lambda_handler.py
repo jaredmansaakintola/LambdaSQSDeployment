@@ -16,10 +16,17 @@ def lambda_handler(event, context):
         records = read_queue(event)
     else:
         records = [event]
+<<<<<<< HEAD
 
     for item in records:
         print('hello: ' + item.get('key1'))
 
+=======
+        
+    for item in records:
+        print('hello: ' + item.get('key1'))
+        
+>>>>>>> a9d9e8450487d74576b768da7b049711fc54133f
     return {
         'statusCode': 200,
         'body': str(len(records)) + ' processed'
