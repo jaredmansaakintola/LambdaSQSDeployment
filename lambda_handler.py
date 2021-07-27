@@ -16,10 +16,10 @@ def lambda_handler(event, context):
         records = read_queue(event)
     else:
         records = [event]
-        
+
     for item in records:
         print('hello: ' + item.get('key1'))
-        
+
     return {
         'statusCode': 200,
         'body': str(len(records)) + ' processed'
